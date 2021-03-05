@@ -1,0 +1,22 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 16;
+  line-height: 1.6;
+  background-image: linear-gradient(to bottom right, #f6d5f7, #fbe9d7);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+
+
+h1 {
+  font-size: 30px;
+  font-weight: 400;
+  padding: 20px;
+}
+
+.pokelist {
+  font-size: 18px;
+  padding: 20px;
+}
