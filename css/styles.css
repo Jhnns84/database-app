@@ -1,7 +1,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
-  font-size: 16;
+  font-size: 16px;
   line-height: 1.6;
   background-image: linear-gradient(to bottom right, #f6d5f7, #fbe9d7);
   background-repeat: no-repeat;
@@ -19,4 +19,18 @@ h1 {
 .pokelist {
   font-size: 18px;
   padding: 20px;
+}
+
+.pokemon-list {
+  list-style-type: none;
+}
+
+.pokeButton {
+  background-color: #92f2c7;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  border: none;
+  width: 200px;
 }
