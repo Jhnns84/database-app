@@ -25,12 +25,22 @@ let pokemonRepository = (function () {
     pokemonList.push(pokemon);
   }
 
+// this function logs the details of the pokemon object that's passed as a parameter
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
+
+// this function creates buttons for each pokemon object
   function addListItem(pokemon) {
     let pokeVariable = document.querySelector('ul');
     let listItem = document.createElement('li');
     let button = document.createElement('button');
     button.innerText=pokemon.name;
     button.classList.add('pokeButton');
+    //this event listener triggers the showDetails function when a button is clicked
+    button.addEventListener('click', function (event) {
+      showDetails(pokemon)
+    });
     listItem.appendChild(button);
     pokeVariable.appendChild(listItem);
   }
@@ -47,12 +57,4 @@ let pokemonRepository = (function () {
 pokemonRepository.getAll().forEach(function(pokemon) {
   pokemonRepository.addListItem(pokemon)
 
-  // this code checks for height above 4 and adds a highlight (wow, that's big) to the pokemon
-  // if (pokemon.height > 4){
-  // document.write(`<p>${pokemon.name} (height: ${pokemon.height}) - Wow, that's big</p>`);
-  // }
-  // // this code lists all pokemon with a height lower than 4
-  // else if (pokemon.height < 4){
-  // document.write(`<p>${pokemon.name} (height: ${pokemon.height})</p>`);
-  // }
 })
