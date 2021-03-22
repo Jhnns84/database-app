@@ -62,31 +62,39 @@ let pokemonRepository = (function () {
   }
 
   function showDetails(item) {
-    modalContainer.innerHTML = '';
+    loadDetails(item).then(function(){
+      modalContainer.innerHTML = '';
 
-    // this creates a new modal
-    let modal = document.createElement('div');
-    modal.classList.add('modal');
 
-    // this creates the content elements of the modal
-    let closeButtonElement = document.createElement('button');
-    closeButtonElement.classList.add('modal-close');
-    closeButtonElement.innerText = 'Close';
-    // this event listener listens for clicks on the close button when the modal is visible
-    closeButtonElement.addEventListener('click', hideModal);
 
-    let titleElement = document.createElement('h1');
-    titleElement.innerText = item.name;
+      // this creates a new modal
+      let modal = document.createElement('div');
+      modal.classList.add('modal');
 
-    let contentElement = document.createElement('p');
-    contentElement.innerText = item.height;
+      // this creates the content elements of the modal
+      let closeButtonElement = document.createElement('button');
+      closeButtonElement.classList.add('modal-close');
+      closeButtonElement.innerText = 'Close';
+      // this event listener listens for clicks on the close button when the modal is visible
+      closeButtonElement.addEventListener('click', hideModal);
 
-    modal.appendChild(closeButtonElement);
-    modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
-    modalContainer.appendChild(modal);
+      let titleElement = document.createElement('h1');
+      titleElement.innerText = item.name;
 
-    modalContainer.classList.add('is-visible');
+      let contentElement = document.createElement('p');
+      contentElement.innerText = 'Height: ' + item.height;
+
+      let imageElement = document.createElement('img');
+      imageElement.src = item.imageURL;
+
+      modal.appendChild(closeButtonElement);
+      modal.appendChild(titleElement);
+      modal.appendChild(contentElement);
+      modal.appendChild(imageElement);
+      modalContainer.appendChild(modal);
+
+      modalContainer.classList.add('is-visible');
+    })
   }
 
   function hideModal() {
