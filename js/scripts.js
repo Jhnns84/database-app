@@ -19,11 +19,12 @@ let pokemonRepository = (function () {
   }
 
   function addListItem(pokemon) {
-    let pokemonList = document.querySelector('.pokemon-list');
+    let pokemonList = document.querySelector('.list-group'); // added bootstrap utility class "list-group"
     let listPokemon = document.createElement('li');
+    listPokemon.classList.add('.group-list-item'); // added bootstrap utility class "group-list-item"
     let button = document.createElement('button');
     button.innerText = pokemon.name;
-    button.classList.add('pokeButton');
+    button.classList.add('btn,btn-primary'); // added bootstrap utility class "btn btn-primary"
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
     button.addEventListener('click', function(event) {
