@@ -9,7 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
-  <body>
+  <body class="d-flex flex-column max-vw-100 min-vh-100">
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
 		<a class="navbar-brand" href="#">Pokedex</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,9 +33,13 @@
       </ul>
     </div>
   </nav>
-    <div class="pokelist">
-      <ul class='list-group'></ul>
 
+  <!-- Main Section -->
+  <div class="container">
+    <div class="pokelist row">
+      <ul class='list-group'></ul>
+    </div>
+  </div>
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -54,19 +59,20 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row"></div>
-    <script src="js/promise-polyfill.js"></script>
-    <script src="js/fetch-polyfill.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-  </body>
+
+    <!-- <div class="row"></div> -->
+  <!-- Javascript -->
+  <script src="js/promise-polyfill.js"></script>
+  <script src="js/fetch-polyfill.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+</body>
 </html>

@@ -13,3 +13,26 @@ body {
 .pokelist {
 margin-top: 80px;
 }
+
+.modal-text {
+  padding-left: 20px;
+}
+
+.modal-text:first-letter {
+  text-transform: uppercase;
+}
+
+.pokeButton {
+  background-color: #92f2c7;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  border: none;
+  width: 200px;
+}
+
+
+.pokeButton:first-letter {
+  text-transform: uppercase;
+}

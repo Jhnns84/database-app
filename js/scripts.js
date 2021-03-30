@@ -19,46 +19,50 @@ let pokemonRepository = (function () {
 
   function addListItem(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
-          let $row = $(".row");
+      //     let $row = $(".row");
+      //
+      //     let $card = $('<div class="card" style="width:400px"></div>');
+      //     let $image = $(
+      //       '<img class="card-img-top" alt="Card image" style="width:20%" />'
+      //     );
+      //     $image.attr("src", pokemon.imageUrlFront);
+      //     let $cardBody = $('<div class="card-body"></div>');
+      //     let $cardTitle = $("<h4 class='card-title' >" + pokemon.name + "</h4>");
+      //     let $seeProfile = $(
+      //       '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">See Profile</button>'
+      //     );
+      //
+      //     $row.append($card);
+      //     //Append the image to each card
+      //     $card.append($image);
+      //     $card.append($cardBody);
+      //     $cardBody.append($cardTitle);
+      //     $cardBody.append($seeProfile);
+      //
+      //     $seeProfile.on("click", function (event) {
+      //       showDetails(pokemon);
+      //     });
+      //   });
+      // }
 
-          let $card = $('<div class="card" style="width:400px"></div>');
-          let $image = $(
-            '<img class="card-img-top" alt="Card image" style="width:20%" />'
-          );
-          $image.attr("src", pokemon.imageUrlFront);
-          let $cardBody = $('<div class="card-body"></div>');
-          let $cardTitle = $("<h4 class='card-title' >" + pokemon.name + "</h4>");
-          let $seeProfile = $(
-            '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">See Profile</button>'
-          );
 
-          $row.append($card);
-          //Append the image to each card
-          $card.append($image);
-          $card.append($cardBody);
-          $cardBody.append($cardTitle);
-          $cardBody.append($seeProfile);
-
-          $seeProfile.on("click", function (event) {
-            showDetails(pokemon);
-          });
-        });
-      }
-
-
-//     let pokemonList = document.querySelector('.list-group'); // added bootstrap utility class "list-group"
-//     let listPokemon = document.createElement('li');
-//     listPokemon.classList.add('.list-group-item'); // added bootstrap utility class "list-group-item"
-//     let button = document.createElement('button');
-//     button.innerText = pokemon.name;
-//     button.classList.add('btn,btn-primary'); // added bootstrap utility class "btn btn-primary"
-//     listPokemon.appendChild(button);
-//     pokemonList.appendChild(listPokemon);
-//     button.addEventListener('click', function(event) {
-//       showDetails(pokemon);
-//     });
-//   })
-// }
+    let pokemonList = document.querySelector('.list-group'); // added bootstrap utility class "list-group"
+    let listPokemon = document.createElement('li');
+    listPokemon.classList.add('.list-group-item'); // added bootstrap utility class "list-group-item"
+    listPokemon.classList.add('col-6');
+    listPokemon.classList.add('col-md-4');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('btn,btn-primary'); // added bootstrap utility class "btn btn-primary"
+    button.setAttribute('data-toggle', 'modal');
+    button.setAttribute('data-target', '#exampleModal');
+    listPokemon.appendChild(button);
+    pokemonList.appendChild(listPokemon);
+    button.addEventListener('click', function(event) {
+      showDetails(pokemon);
+    });
+  })
+}
 
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
@@ -106,6 +110,7 @@ let pokemonRepository = (function () {
     modalBody.empty();
 
     let nameElement = document.createElement('h1');
+    nameElement.classList.add('modal-text');
     nameElement.innerText = item.name;
 
     let imageElementFront = document.createElement('img');
@@ -117,9 +122,11 @@ let pokemonRepository = (function () {
     imageElementBack.src = item.imageUrlBack;
 
     let heightElement = document.createElement('p');
+    heightElement.classList.add('modal-text');
     heightElement.innerText = 'Height: ' + item.height;
 
     let weightElement = document.createElement('p');
+    weightElement.classList.add('modal-text');
     weightElement.innerText = 'Weight: ' + item.weight;
 
     modalTitle.append(nameElement);
