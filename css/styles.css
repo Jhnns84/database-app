@@ -7,10 +7,9 @@ body {
   background-image: linear-gradient(to bottom right, #f6d5f7, #fbe9d7);
   background-repeat: no-repeat;
   background-attachment: fixed;
-
 }
 
-.pokelist {
+.poke-margin {
 margin-top: 80px;
 }
 
@@ -22,17 +21,19 @@ margin-top: 80px;
   text-transform: uppercase;
 }
 
-.pokeButton {
-  background-color: #92f2c7;
+.btn-main{
   padding: 20px;
+  background-color: #92f2c7;
+  width: 100%;
   margin: 20px;
-  border-radius: 8px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  border: none;
-  width: 200px;
+  transition: 500ms;
 }
 
+.btn-main:hover{
+      background-color: #7cfc00;
+ }
 
-.pokeButton:first-letter {
-  text-transform: uppercase;
-}
+
+ .btn-main:first-letter {
+   text-transform: uppercase;
+ }

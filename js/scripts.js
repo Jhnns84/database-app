@@ -1,6 +1,6 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=50';
 
   function add(pokemon) {
     if (
@@ -17,52 +17,32 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
-  function addListItem(pokemon) {
-    pokemonRepository.loadDetails(pokemon).then(function () {
-      //     let $row = $(".row");
-      //
-      //     let $card = $('<div class="card" style="width:400px"></div>');
-      //     let $image = $(
-      //       '<img class="card-img-top" alt="Card image" style="width:20%" />'
-      //     );
-      //     $image.attr("src", pokemon.imageUrlFront);
-      //     let $cardBody = $('<div class="card-body"></div>');
-      //     let $cardTitle = $("<h4 class='card-title' >" + pokemon.name + "</h4>");
-      //     let $seeProfile = $(
-      //       '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">See Profile</button>'
-      //     );
-      //
-      //     $row.append($card);
-      //     //Append the image to each card
-      //     $card.append($image);
-      //     $card.append($cardBody);
-      //     $cardBody.append($cardTitle);
-      //     $cardBody.append($seeProfile);
-      //
-      //     $seeProfile.on("click", function (event) {
-      //       showDetails(pokemon);
-      //     });
-      //   });
-      // }
 
 
-    let pokemonList = document.querySelector('.list-group'); // added bootstrap utility class "list-group"
-    let listPokemon = document.createElement('li');
-    listPokemon.classList.add('.list-group-item'); // added bootstrap utility class "list-group-item"
-    listPokemon.classList.add('col-6');
-    listPokemon.classList.add('col-md-4');
-    let button = document.createElement('button');
-    button.innerText = pokemon.name;
-    button.classList.add('btn,btn-primary'); // added bootstrap utility class "btn btn-primary"
-    button.setAttribute('data-toggle', 'modal');
-    button.setAttribute('data-target', '#exampleModal');
-    listPokemon.appendChild(button);
-    pokemonList.appendChild(listPokemon);
-    button.addEventListener('click', function(event) {
-      showDetails(pokemon);
-    });
-  })
-}
+  //  This is the function that creates one column of functioning buttons
+     function addListItem(pokemon) {
+      pokemonRepository.loadDetails(pokemon).then(function () {
+        let pokemonList = document.getElementById('pokeList'); // added bootstrap utility class "list-group"
+        let listPokemon = document.createElement('div');
+        // listPokemon.classList.add('list-group-item'); // added bootstrap utility class "list-group-item"
+        listPokemon.classList.add('col-10');
+        listPokemon.classList.add('col-md-4');
+        listPokemon.classList.add('col-sm-6');
+        // listPokemon.classList.add('col-md-4');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('btn');
+        button.classList.add('btn-main');
+        // button.classList.add('btn-primary');
+        button.setAttribute('data-toggle', 'modal');
+        button.setAttribute('data-target', '#pokeModal');
+        listPokemon.appendChild(button);
+        pokemonList.appendChild(listPokemon);
+        button.addEventListener('click', function(event) {
+          showDetails(pokemon);
+        });
+      })
+    }
 
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
