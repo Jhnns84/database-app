@@ -1,0 +1,37 @@
+body {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1.6;
+	background-image: linear-gradient(to bottom right, #f6d5f7, #fbe9d7);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.poke-margin {
+	margin-top: 80px;
+}
+
+.modal-text {
+	padding-left: 20px;
+}
+
+.modal-text:first-letter {
+	text-transform: uppercase;
+}
+
+.btn-main {
+	padding: 20px;
+	background-color: #92f2c7;
+	width: 100%;
+	margin: 20px;
+	transition: 500ms;
+}
+
+.btn-main:hover {
+	background-color: #7cfc00;
+}
+
+.btn-main:first-letter {
+	text-transform: uppercase;
+}
